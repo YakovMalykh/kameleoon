@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import static org.springframework.security.config.Customizer.*;
-import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
+//import static org.springframework.security.web.util.matcher.AntPathRequestMatcher.antMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -24,7 +24,7 @@ public class SecurityConfig {
 
     private static final String[] AUTH_WHITELIST = {
             "/swagger-resources/**",
-            "/swagger-ui.html",
+            "/swagger-ui/index.html",
             "/v3/api-docs",
             "/h2-console/**",
             "/home"
@@ -45,8 +45,9 @@ public class SecurityConfig {
         return http
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/auth").authenticated()
-                                .requestMatchers(AUTH_WHITELIST).permitAll()
+                                .mvcMatchers(AUTH_WHITELIST).permitAll()
+//                                .requestMatchers(AUTH_WHITELIST).permitAll()
+//                                .requestMatchers("/auth").authenticated()
                                 .anyRequest().authenticated()
                 )
                 .userDetailsService(myUserDetailsService)

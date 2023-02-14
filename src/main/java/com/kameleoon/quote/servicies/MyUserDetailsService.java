@@ -1,11 +1,13 @@
 package com.kameleoon.quote.servicies;
 
 import com.kameleoon.quote.repositories.UserRepository;
-import jakarta.transaction.Transactional;
+//import jakarta.transaction.Transactional;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class MyUserDetailsService implements UserDetailsService {
