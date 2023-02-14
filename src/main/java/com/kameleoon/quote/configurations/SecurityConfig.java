@@ -27,7 +27,7 @@ public class SecurityConfig {
             "/swagger-ui/index.html",
             "/v3/api-docs",
             "/h2-console/**",
-            "/home"
+            "/registration"
     };
 
     public SecurityConfig(MyUserDetailsService myUserDetailsService) {
@@ -46,8 +46,6 @@ public class SecurityConfig {
                 .csrf().disable()
                 .authorizeHttpRequests(auth -> auth
                                 .mvcMatchers(AUTH_WHITELIST).permitAll()
-//                                .requestMatchers(AUTH_WHITELIST).permitAll()
-//                                .requestMatchers("/auth").authenticated()
                                 .anyRequest().authenticated()
                 )
                 .userDetailsService(myUserDetailsService)

@@ -18,13 +18,17 @@ public class Vote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer pros;
-    private Integer cons;
+    private boolean pros;
+    private boolean cons;
 
     @Column(name = "creation_date")
     private LocalDate creationDate;
     @ManyToOne
     @JoinColumn(name = "voting_id")
     private Voting voting;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User voter;
+
 
 }

@@ -17,11 +17,4 @@ public class KameleoonApplication {
         SpringApplication.run(KameleoonApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner commandLineRunner(UserRepository userRepository, PasswordEncoder encoder) {
-        return args ->{
-            userRepository.save(new User("user", "test@test.com", encoder.encode("password"), LocalDate.now()));
-        };
-    }
-
 }

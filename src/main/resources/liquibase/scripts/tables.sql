@@ -14,17 +14,18 @@ CREATE TABLE IF NOT EXISTS users
 CREATE TABLE IF NOT EXISTS voting
 (
     id   BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    pros BIGINT,
-    cons BIGINT
+    pros BIGINT DEFAULT 0,
+    cons BIGINT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS vote
 (
     id            BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    pros          INT,
-    cons          int,
+    pros          BOOLEAN,
+    cons          BOOLEAN,
     creation_date DATE,
-    voting_id     BIGINT REFERENCES voting (id)
+    voting_id     BIGINT REFERENCES voting (id),
+    user_id       BIGINT REFERENCES users (id)
 );
 
 CREATE TABLE IF NOT EXISTS quote
@@ -37,4 +38,10 @@ CREATE TABLE IF NOT EXISTS quote
     voting_id     BIGINT REFERENCES voting (id)
 );
 
+INSERT INTO users(username, email, password, creation_date)
+VALUES ('user', 'test@test.ru', '{bcrypt}$2a$10$FrBQOvCSsYATs5J5ZT8RFuo6E2.QvPybK5c.5INOaIVjdUt/5Tyb2', '2023-02-13');
+-- password = 'password'
 
+-- SELECT creation_date, SUM(pros), SUM(cons)
+-- FROM vote
+-- GROUP BY creation_date HAVING voting_id = ?;
