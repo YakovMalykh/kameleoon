@@ -42,6 +42,4 @@ INSERT INTO users(username, email, password, creation_date)
 VALUES ('user', 'test@test.ru', '{bcrypt}$2a$10$FrBQOvCSsYATs5J5ZT8RFuo6E2.QvPybK5c.5INOaIVjdUt/5Tyb2', '2023-02-13');
 -- password = 'password'
 
--- SELECT creation_date, SUM(pros), SUM(cons)
--- FROM vote
--- GROUP BY creation_date HAVING voting_id = ?;
+

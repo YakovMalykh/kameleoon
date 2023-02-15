@@ -2,7 +2,6 @@ package com.kameleoon.quote.servicies.interfacies;
 
 import com.kameleoon.quote.DTO.CreateQuoteDto;
 import com.kameleoon.quote.DTO.DetailsQuoteDto;
-import com.kameleoon.quote.DTO.VoteDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 
@@ -26,5 +25,4 @@ public interface QuoteService {
     ResponseEntity<List<DetailsQuoteDto>> getWorseTenQuotes();
 
 
-//    List<VoteDto> getListVoteDto(Long qouteId);
 }

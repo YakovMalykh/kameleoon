@@ -1,6 +1,5 @@
 package com.kameleoon.quote.models;
 
-//import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

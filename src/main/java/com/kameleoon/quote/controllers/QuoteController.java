@@ -2,11 +2,9 @@ package com.kameleoon.quote.controllers;
 
 import com.kameleoon.quote.DTO.CreateQuoteDto;
 import com.kameleoon.quote.DTO.DetailsQuoteDto;
-import com.kameleoon.quote.DTO.VoteDto;
 import com.kameleoon.quote.servicies.interfacies.QuoteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import liquibase.pro.packaged.V;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -105,8 +103,4 @@ public class QuoteController {
         return quoteService.getWorseTenQuotes();
     }
 
-//    @GetMapping("/graph/{quoteId}")
-//    public List<VoteDto> getListVoteDto(@PathVariable Long quoteId) {
-//        return quoteService.getListVoteDto(quoteId);
-//    }
 }

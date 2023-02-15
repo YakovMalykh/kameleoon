@@ -2,7 +2,6 @@ package com.kameleoon.quote.servicies;
 
 import com.kameleoon.quote.DTO.CreateQuoteDto;
 import com.kameleoon.quote.DTO.DetailsQuoteDto;
-import com.kameleoon.quote.DTO.VoteDto;
 import com.kameleoon.quote.exceptions.QuoteNotFoundException;
 import com.kameleoon.quote.mappers.QuoteMapper;
 import com.kameleoon.quote.models.Quote;
@@ -23,7 +22,6 @@ import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -130,10 +128,5 @@ public class QuoteServiceImpl implements QuoteService {
         }
         return ResponseEntity.ok(listForResponse);
     }
-
-//    @Override
-//    public List<VoteDto> getListVoteDto(Long qouteId) {
-//        return votingService.getListVoteDto(qouteId);
-//    }
 
 }

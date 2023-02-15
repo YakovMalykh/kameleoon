@@ -1,7 +1,5 @@
 package com.kameleoon.quote.DTO;
 
-import com.kameleoon.quote.models.User;
-import com.kameleoon.quote.models.Voting;
 import lombok.Data;
 
 import java.time.LocalDate;

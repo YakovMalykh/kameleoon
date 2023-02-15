@@ -1,6 +1,5 @@
 package com.kameleoon.quote.servicies;
 
-import com.kameleoon.quote.DTO.VoteDto;
 import com.kameleoon.quote.models.User;
 import com.kameleoon.quote.models.Voting;
 import com.kameleoon.quote.repositories.VotingRepository;
@@ -11,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Slf4j
 @Service
@@ -30,9 +28,6 @@ public class VotingServiceImpl implements VotingService {
 
     @Override
     public void voteFor(Voting voting, User voter) {
-//        Voting foundVoting = votingRepository.findById(voting.getId())
-//                .orElseThrow(() -> new VotingNotFoundException("Voting " + voting.getId() + " not found"));
-
         Long amountPros = voting.getAmountPros();
         if (amountPros == null) {
             amountPros = 0L;
@@ -46,8 +41,6 @@ public class VotingServiceImpl implements VotingService {
 
     @Override
     public void voteAgainst(Voting voting, User voter) {
-//        Voting foundVoting = votingRepository.findById(voting.getId())
-//                .orElseThrow(() -> new VotingNotFoundException("Voting " + voting.getId() + " not found"));
         Long amountCons = voting.getAmountCons();
         if (amountCons == null) {
             amountCons = 0L;
@@ -59,8 +52,4 @@ public class VotingServiceImpl implements VotingService {
         votingRepository.save(voting);
     }
 
-//    @Override
-//    public List<VoteDto> getListVoteDto(Long qouteId) {
-//        return serviceVote.getListVoteDto(qouteId);
-//    }
 }
