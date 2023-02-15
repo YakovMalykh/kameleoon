@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  h2:
+    image: 1000kit/h2
+    container_name: 'h2'
+
+  app:
+    image: yakoff/quotes:latest
+    container_name: 'quote'
+    ports:
+      - 8080:8080
