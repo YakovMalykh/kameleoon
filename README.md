@@ -1,5 +1,4 @@
-# kameleoon
-Выполнение тестового задания
+Выполнение тестового задания для Kameleoon
 
 задание - https://developers.kameleoon.com/back-end-trial-task.html
 
